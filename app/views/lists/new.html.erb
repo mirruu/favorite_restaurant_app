@@ -1,0 +1,13 @@
+<h1>Add a new restaurant on the list!</h1>
+
+<%= form_tag "http://localhost:3000/lists", :method => "put" do %>
+	<%= label_tag "Restaurant Name:" %>
+	<%= text_field_tag "name" %>
+	<%= label_tag "Description:" %>
+	<%= text_field_tag "description" %>
+	<%= label_tag "Cost:" %>
+	<%= text_field_tag "cost" %>
+	<%= submit_tag "Add This Restaurant!" %>
+
+<% end %>
+	

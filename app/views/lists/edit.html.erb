@@ -1,0 +1,12 @@
+<h1>Edit a Restaurant!</h1>
+
+<%= form_tag "http://localhost:3000/lists/#{@list.id}", :method => "put" do %>
+	<%= label_tag "Restaurant Name:" %>
+	<%= text_field_tag("name", @list.name) %>
+	<%= label_tag "Description:" %>
+	<%= text_field_tag("description", @list.description) %>
+	<%= label_tag "Cost:" %>
+	<%= text_field_tag("cost", @list.cost) %>
+	<%= submit_tag "Edit This Restaurant!"%>
+
+<% end %>

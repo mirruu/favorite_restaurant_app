@@ -1,0 +1,26 @@
+<h1>My Favorite Restaurants in Chicago</h1>
+
+<a href="http://localhost:3000/lists/new">Add a New Restaurant</a>
+
+<% if @lists.empty? %>
+	<p>Sorry, we don't have any restaurants with that budget!</p>
+<% else %>
+	<ol>
+	<% @lists.each do |list| %>
+		<li>
+			<a href="http://localhost:3000/lists/<%= list.id%>">
+				<%= list.name %> | Budget/person $ <%= list.cost %>
+			</a>
+			| <%= link_to "Delete", 
+						  "http://localhost:3000/lists/#{list.id}", 
+						  :method => :delete,
+						  :confirm => "Are you kidding me?" %>
+			| <%= link_to "Edit", 
+			     		  "http://localhost:3000/lists/#{list.id}/edit" %>
+			
+		</li>
+	<% end %>
+	</ol>
+<% end %>		
+		
+		
